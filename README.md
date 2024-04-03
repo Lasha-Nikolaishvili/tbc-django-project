@@ -1,3 +1,7 @@
 # TBC Django app
 
-This is a repository for tbc django project.
+This is a repository for TBC Django project.
+
+## Admin Credentials
+- **username** - admin
+- **password** - admin123
