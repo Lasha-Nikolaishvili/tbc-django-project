@@ -1,29 +1,8 @@
 from django.db import models
+from market.choice import BOOK_CATEGORIES
 
 
 class Book(models.Model):
-    HORROR = 'horror'
-    MYSTERY = 'mystery'
-    SCIENCE_FICTION = 'science fiction'
-    HISTORICAL_FICTION = 'historical fiction'
-    ROMANCE = 'romance'
-    FANTASY = 'fantasy'
-    AUTOBIOGRAPHY = 'autobiography'
-    ADVENTURE = 'adventure'
-    HISTORY = 'history'
-
-    BOOK_CATEGORIES = [
-        (HORROR, 'Horror'),
-        (MYSTERY, 'Mystery'),
-        (SCIENCE_FICTION, 'Science Fiction'),
-        (HISTORICAL_FICTION, 'Historical Fiction'),
-        (ROMANCE, 'Romance'),
-        (FANTASY, 'Fantasy'),
-        (AUTOBIOGRAPHY, 'Autobiography'),
-        (ADVENTURE, 'Adventure'),
-        (HISTORY, 'History')
-    ]
-
     name = models.CharField(max_length=150)
     page_count = models.IntegerField()
     category = models.CharField(max_length=30, choices=BOOK_CATEGORIES)
@@ -36,4 +15,4 @@ class Book(models.Model):
 
     class Meta:
         verbose_name = 'book'
-
+        verbose_name_plural = 'books'
