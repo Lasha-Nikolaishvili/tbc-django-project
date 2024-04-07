@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from market.models import Book
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.core.serializers import serialize
 from django.core.exceptions import ObjectDoesNotExist
 
 
 def get_books(request):
-    books = list(Book.objects.values('name', 'author_name', 'category', 'page_count', 'price'))
+    books = Book.objects.defer('image')
+    books_json = serialize('json', books, fields=['name', 'author_name', 'category', 'page_count', 'price'])
 
-    return JsonResponse(books, safe=False, status=200)
+    return HttpResponse(books_json, content_type='application/json', status=200)
 
 
 def get_book(request, book_id):
