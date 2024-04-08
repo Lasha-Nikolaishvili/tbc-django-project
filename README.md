@@ -50,4 +50,6 @@ The application should now be accessible at `http://localhost:8000`.
 
 - Visit `http://localhost:8000/books` in your web browser to access the bookstores list of books.
 - Visit `http://localhost:8000/books/:book_id` in your web browser to access a book at a specific id.
+- Visit `http://localhost:8000/authors` in your web browser to access the bookstores list of authors.
+- Visit `http://localhost:8000/authors/:author_id` in your web browser to access an author at a specific id along with their book listings.
 - Admin users can access the admin panel at `http://localhost:8000/admin` to manage books, and users.
