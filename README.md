@@ -1,11 +1,12 @@
 # TBC Django Bookstore Project
 
-Welcome to the Django Bookstore Project! This is a simple web application built using Django framework that allows users to view book data from a virtual bookstore.
+Welcome to the Django Bookstore Project! This is a simple web application built using Django framework that allows users to view book and author data from a virtual bookstore.
 
 ## Features
 
 - Book JSON data: Users can view a JSON list of available books with details such as title, author, price, page count and category.
-- Pre-populated database: The project comes with a database of books to view and test and with a superuser. 
+- Author JSON data: Users can view a JSON list of book authors with details such as first_name, last_name, nationality and age.
+- Pre-populated database: The project comes with a database of books and authors to view and test and with a superuser. 
 - Admin panel: Admin users can add, edit, and delete books.
 
 ## Admin Panel
