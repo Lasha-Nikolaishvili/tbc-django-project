@@ -34,8 +34,8 @@ def get_book(request, book_id):
 
 
 def get_authors(request):
-    authors = Author.objects.only('first_name', 'last_name', 'nationality', 'age')
-    authors_json = serialize('json', authors, fields=['first_name', 'last_name', 'nationality', 'age'])
+    authors = Author.objects.all()
+    authors_json = serialize('json', authors)
 
     return HttpResponse(authors_json, content_type='application/json', status=200)
 

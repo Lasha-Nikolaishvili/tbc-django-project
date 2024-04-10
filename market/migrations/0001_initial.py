@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('category', models.CharField(choices=[('horror', 'Horror'), ('mystery', 'Mystery'), ('science fiction', 'Science Fiction'), ('historical fiction', 'Historical Fiction'), ('romance', 'Romance'), ('fantasy', 'Fantasy'), ('autobiography', 'Autobiography'), ('adventure', 'Adventure'), ('history', 'History')], max_length=30)),
                 ('author_name', models.CharField(max_length=150)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('image', models.ImageField(upload_to='book_images/')),
+                ('image', models.ImageField(upload_to='media/')),
             ],
         ),
     ]
