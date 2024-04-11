@@ -1,0 +1,58 @@
+h1 {
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.tbc-span {
+    color: var(--primary);
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin: 1rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.books-cont {}
+
+.books-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.books-list-item a img{
+    width: 18rem;
+}
+
+.pagination-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+}
+
+.pagination-cont > *{
+    padding: 0 1rem;
+}
+
+.pagination-btn {
+    background-color: var(--primary);
+    color: var(--text);
+    padding: .5rem 1.5rem;
+    border-radius: .5em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pagination-btn:disabled,
+.pagination-btn[disabled] {
+    background-color: var(--primary-700);
+    cursor: default;
+}

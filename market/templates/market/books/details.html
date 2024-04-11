@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book - {{ book.name }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'market/style.css' %}">
+    <link rel="stylesheet" href="{% static 'market/details.css' %}">
+</head>
+<body>
+    <h1>Book Details</h1>
+    <div class="details-cont">
+        <img class="details-cont-img" src="{{ book.image.url }}">
+        <div class="details-cont-body">
+            <h2 class="book-name">{{ book.name }}</h2>
+            <p><span class="param-title">author:</span> {{ book.author }}</p>
+            <p><span class="param-title">category:</span>  {{ book.category }}</p>
+            <p><span class="param-title">page_count:</span> {{ book.page_count }}</p>
+            <p><span class="param-title">price:</span> {{ book.price }}</p>
+            <a class="back-btn" href="{% url 'market:index' %}">back</a>
+        </div>
+    </div>
+</body>
+</html>
