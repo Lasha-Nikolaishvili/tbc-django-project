@@ -25,7 +25,7 @@ SOFT_COVER = "soft"
 SPECIAL_COVER = "special"
 
 COVER_CHOICES = [
-    (HARD_COVER, "Hard"),
-    (SOFT_COVER, "Soft"),
-    (SPECIAL_COVER, "Special"),
+    (HARD_COVER, "Hard cover"),
+    (SOFT_COVER, "Soft cover"),
+    (SPECIAL_COVER, "Special cover"),
 ]
