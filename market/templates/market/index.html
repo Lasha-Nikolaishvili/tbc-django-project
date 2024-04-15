@@ -13,12 +13,19 @@
 <body>
     <h1><span class="tbc-span">TBC</span> Bookstore</h1>
     <h2>Books</h2>
+    <form method="GET" class="search-form">
+        <div class="input-cont">
+            <label class="search-bar-label" for="searchFilter">Search Books</label>
+            <input class="search-bar" type="text" id="searchFilter" name="filter">
+        </div>
+        <button class="search-form-btn">Search</button>
+    </form>
     <div class="books-cont">
         <div class="books-list">
             {% for book in page.object_list %}
                 <div class="books-list-item">
                     <a href="{% url "market:get_book" book.pk %}">
-                        <img src="{{ book.image.url }}">
+                        <img src="{{ book.image.url }}" alt="{{ book.name }} image">
                     </a>
                     <div class="books-list-item-body">
                         <p>{{ book.name }}</p>

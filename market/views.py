@@ -4,6 +4,7 @@ from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
 from market.serializers import CustomBookSerializer
 from django.core.paginator import Paginator
+from django.db.models import Q
 import json
 
 
@@ -47,7 +48,18 @@ def get_author(request, author_id):
 
 
 def index(request):
-    books = Book.objects.all()
+    if request.GET.get('filter'):
+        filter_property: str = request.GET.get('filter')
+        print(filter_property)
+        books = Book.objects.filter(
+            Q(name__icontains=filter_property) |
+            Q(author__first_name__icontains=filter_property.split(' ')[0]) |
+            Q(author__last_name__icontains=filter_property.split(' ')[1:])
+        )
+        print(books)
+
+    else:
+        books = Book.objects.all()
     paginator = Paginator(books, 3)
     page_num = int(request.GET.get('page', 1))
     page = paginator.get_page(page_num)

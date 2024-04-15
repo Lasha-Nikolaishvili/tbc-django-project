@@ -18,7 +18,31 @@ h2 {
     font-family: "Poppins", sans-serif;
 }
 
-.books-cont {}
+.search-form {
+    padding: 1rem;
+}
+
+.input-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar-label {
+    font-size: 1.2rem;
+}
+
+.search-bar {
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+.search-form-btn {
+    padding: .5rem 1rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: .5rem;
+    margin-top: .8rem;
+}
 
 .books-list {
     display: flex;
