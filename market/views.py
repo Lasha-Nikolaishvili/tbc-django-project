@@ -50,13 +50,11 @@ def get_author(request, author_id):
 def index(request):
     if request.GET.get('filter'):
         filter_property: str = request.GET.get('filter')
-        print(filter_property)
         books = Book.objects.filter(
             Q(name__icontains=filter_property) |
             Q(author__first_name__icontains=filter_property.split(' ')[0]) |
             Q(author__last_name__icontains=filter_property.split(' ')[1:])
         )
-        print(books)
 
     else:
         books = Book.objects.all()
