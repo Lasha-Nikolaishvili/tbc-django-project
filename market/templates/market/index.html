@@ -36,7 +36,7 @@
         </div>
         <div class="pagination-cont">
             {% if page.has_previous %}
-                <a class="pagination-btn" href="{% url "market:index" %}?page={{ page.previous_page_number }}">Prev</a>
+                <a class="pagination-btn" href="{% url "market:index" %}?page={{ page.previous_page_number }}{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}">Prev</a>
             {% else %}
                 <a class="pagination-btn" disabled>Prev</a>
             {% endif %}
@@ -44,7 +44,7 @@
             <span class="current">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
 
             {% if page.has_next %}
-                <a class="pagination-btn" href="{% url "market:index" %}?page={{ page.next_page_number }}">Next</a>
+                <a class="pagination-btn" href="{% url "market:index" %}?page={{ page.next_page_number }}{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}">Next</a>
             {% else %}
                 <a class="pagination-btn" disabled>Next</a>
             {% endif %}

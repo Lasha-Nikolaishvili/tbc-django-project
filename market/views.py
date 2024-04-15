@@ -55,7 +55,6 @@ def index(request):
             Q(author__first_name__icontains=filter_property.split(' ')[0]) |
             Q(author__last_name__icontains=filter_property.split(' ')[1:])
         )
-
     else:
         books = Book.objects.all()
     paginator = Paginator(books, 3)
