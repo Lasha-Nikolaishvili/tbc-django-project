@@ -1,9 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from market.models import Book, Author
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
-from django.core.serializers.base import Serializer
-from django.core.exceptions import ObjectDoesNotExist
 from market.custom_book_serializer import CustomBookSerializer
 from django.core.paginator import Paginator
 import json
@@ -19,12 +17,9 @@ def get_books(request):
 
 
 def get_book(request, book_id):
-    try:
-        book = Book.objects.get(pk=book_id)
+    book = get_object_or_404(Book, pk=book_id)
 
-        return render(request, 'market/books/details.html', {'book': book})
-    except ObjectDoesNotExist:
-        return JsonResponse({'error': 'Book not found'}, status=404)
+    return render(request, 'market/books/details.html', {'book': book})
 
 
 def get_authors(request):
@@ -35,22 +30,19 @@ def get_authors(request):
 
 
 def get_author(request, author_id):
-    try:
-        author = Author.objects.get(pk=author_id)
-        books = author.book_set.only('name')
-        books_data = serialize('json', books, fields=['name'])
+    author = get_object_or_404(Author, pk=author_id)
+    books = author.book_set.only('name')
+    books_data = serialize('json', books, fields=['name'])
 
-        author_item = {
-            'first_name': author.first_name,
-            'last_name': author.last_name,
-            'nationality': author.nationality,
-            'age': author.age,
-            'books': json.loads(books_data)
-        }
+    author_item = {
+        'first_name': author.first_name,
+        'last_name': author.last_name,
+        'nationality': author.nationality,
+        'age': author.age,
+        'books': json.loads(books_data)
+    }
 
-        return JsonResponse(author_item, status=200)
-    except ObjectDoesNotExist:
-        return JsonResponse({'error': 'Author not found'}, status=404)
+    return JsonResponse(author_item, status=200)
 
 
 def index(request):

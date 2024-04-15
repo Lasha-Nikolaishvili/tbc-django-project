@@ -26,7 +26,7 @@
                 <a class="pagination-btn" disabled>Prev</a>
             {% endif %}
 
-                <span class="current">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
+            <span class="current">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
 
             {% if page.has_next %}
                 <a class="pagination-btn" href="{% url "market:index" %}?page={{ page.next_page_number }}">Next</a>
