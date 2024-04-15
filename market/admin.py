@@ -15,7 +15,7 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['name', 'author', 'page_count', 'category', 'price', 'image']
+    list_display = ['name', 'author', 'page_count', 'category', 'cover', 'price', 'image']
     search_fields = ['name', 'author']
     list_per_page = 10
     list_filter = ['category']

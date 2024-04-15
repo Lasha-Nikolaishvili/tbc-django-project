@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from market.models import Book, Author
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
-from market.custom_book_serializer import CustomBookSerializer
+from market.serializers import CustomBookSerializer
 from django.core.paginator import Paginator
 import json
 

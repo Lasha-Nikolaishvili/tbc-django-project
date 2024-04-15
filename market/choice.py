@@ -17,5 +17,15 @@ BOOK_CATEGORIES = [
     (FANTASY, 'Fantasy'),
     (AUTOBIOGRAPHY, 'Autobiography'),
     (ADVENTURE, 'Adventure'),
-    (HISTORY, 'History')
+    (HISTORY, 'History'),
+]
+
+HARD_COVER = "hard"
+SOFT_COVER = "soft"
+SPECIAL_COVER = "special"
+
+COVER_CHOICES = [
+    (HARD_COVER, "Hard"),
+    (SOFT_COVER, "Soft"),
+    (SPECIAL_COVER, "Special"),
 ]
