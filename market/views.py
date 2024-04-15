@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from market.models import Book, Author
+from market.models import Book, Author, Category
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
 from market.serializers import CustomBookSerializer
@@ -18,8 +18,9 @@ def get_books(request):
 
 def get_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
+    categories = book.category_set.all()
 
-    return render(request, 'market/books/details.html', {'book': book})
+    return render(request, 'market/books/details.html', {'book': book, 'categories': categories})
 
 
 def get_authors(request):

@@ -13,11 +13,15 @@
 <body>
     <h1>Book Details</h1>
     <div class="details-cont">
-        <img class="details-cont-img" src="{{ book.image.url }}">
+        <img class="details-cont-img" src="{{ book.image.url }}" alt="{{ book.name }} image.">
         <div class="details-cont-body">
             <h2 class="book-name">{{ book.name }}</h2>
             <p><span class="param-title">author:</span> {{ book.author }}</p>
-            <p><span class="param-title">category:</span>  {{ book.category }}</p>
+            <p><span class="param-title">categories:</span>
+                {% for category in categories %}
+                    {{ category }}{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            </p>
             <p><span class="param-title">page_count:</span> {{ book.page_count }}</p>
             <p><span class="param-title">price:</span> {{ book.price }}</p>
             <a class="back-btn" href="{% url 'market:index' %}">back</a>
