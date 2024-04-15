@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from market.models import Book, Author, Category
+from market.models import Book, Author
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
 from market.serializers import CustomBookSerializer

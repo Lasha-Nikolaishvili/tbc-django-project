@@ -78,6 +78,5 @@
 body {
     min-height: 100vh;
     background-color: var(--background);
-    overflow: hidden;
     font-family: "Poppins", sans-serif;
 }

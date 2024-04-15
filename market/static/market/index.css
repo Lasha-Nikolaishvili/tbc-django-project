@@ -26,8 +26,30 @@ h2 {
     flex-wrap: wrap;
 }
 
-.books-list-item a img{
-    width: 18rem;
+.books-list-item {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 16rem;
+    height: auto;
+}
+
+.books-list-item-body {
+    padding: 0 .5rem .5rem .5rem;
+    word-wrap: break-word;
+}
+
+.books-list-item-body p:nth-of-type(1) {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.books-list-item-body p:nth-of-type(2) {
+    color: var(--text);
+}
+
+.books-list-item a img {
+    max-width: 100%;
 }
 
 .pagination-cont {
@@ -35,6 +57,7 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    margin-top: 1rem;
     background-color: white;
 }
 

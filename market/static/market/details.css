@@ -22,6 +22,7 @@ h1 {
 
 .details-cont-img {
     width: 20rem;
+    border-radius: 1rem;
 }
 
 .book-name {
