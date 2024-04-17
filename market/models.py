@@ -18,10 +18,10 @@ class Author(models.Model):
 
 
 class Book(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name=_('author name'))
     name = models.CharField(_('book name'), max_length=150)
     page_count = models.IntegerField(_('page count'))
     cover = models.CharField(_('cover'), max_length=30, choices=COVER_CHOICES)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name=_('author name'))
     price = models.DecimalField(_('price'), max_digits=10, decimal_places=2)
     image = models.ImageField(_('image path'), upload_to='book_images/')
 
@@ -34,8 +34,8 @@ class Book(models.Model):
 
 
 class Category(models.Model):
+    books = models.ManyToManyField(Book, verbose_name=_('books'))
     name = models.CharField(_('genre'), max_length=30, choices=BOOK_CATEGORIES)
-    books = models.ManyToManyField(Book)
 
     def __str__(self):
         return self.name
